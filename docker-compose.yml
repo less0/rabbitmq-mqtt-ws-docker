@@ -23,9 +23,18 @@ services:
         source: ./config/advanced.config
         target: /etc/rabbitmq/advanced.config
         read_only: true
+      - type: volume
+        source: certificates
+        target: /etc/rabbitmq/certs
+        read_only: true
     networks:
       brokernet:
         ipv4_address: 172.16.238.101
+        
+volumes:
+  certificates:
+    external: 
+      name: certificates
 
 networks:
   brokernet:
