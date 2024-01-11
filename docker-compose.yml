@@ -11,7 +11,7 @@ services:
       - "5672:5672"
       - "8080:15672"
       - "1885:15675"
-    command: "/bin/bash -c \"rabbitmq-plugins enable --offline rabbitmq_mqtt rabbitmq_web_mqtt rabbitmq_amqp1_0; rabbitmq-server\""
+    command: "/bin/bash -c \"rabbitmq-plugins enable --offline rabbitmq_mqtt rabbitmq_web_mqtt rabbitmq_amqp1_0 rabbitmq_auth_mechanism_ssl; rabbitmq-server\""
     env_file:
       - config/login.env
     volumes:
